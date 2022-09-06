@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/tauri";
 import "./App.css";
+import Time from "./Time.jsx"
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -15,6 +16,7 @@ function App() {
     <div className="container">
       <h1> Timeri</h1>
 
+      <Time />
 
       <div className="row">
         <div>
