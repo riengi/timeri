@@ -21,9 +21,12 @@ pub struct Response {
 }
 
 // Read file and return data
-pub fn readBirthdays() -> Response {
-    let path = "/tmp/timeri.txt";
-    let res = read_to_string(path);
+pub fn read_birthdays() -> Response {
+
+    let home = home::home_dir().unwrap().into_os_string().into_string().unwrap();
+    let birthday_filepath = home + "/sync/app/timeri/birthdays.csv";
+
+    let res = read_to_string(birthday_filepath);
 
     let mut data: Vec<Person> = Vec::new();
 

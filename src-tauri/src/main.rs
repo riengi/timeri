@@ -14,7 +14,7 @@ mod birthday;
 #[tauri::command]
 fn birthdays() -> birthday::Response {
     println!("birthdays");
-    let res = birthday::readBirthdays();
+    let res = birthday::read_birthdays();
     println!("{:?}", res);
     return res;
 }
