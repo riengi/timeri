@@ -18,9 +18,19 @@ function Time() {
     return () => clearInterval(interval);
   });
 
+  // Get date
+  var days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+  const date = new Date();
+  const dateStr = date.toISOString().split('T')[0] + " (" + days[date.getDay()].toLowerCase() + ") " + "UTC+" + (-date.getTimezoneOffset() / 60);
+
   return <div className="time">
-    {time}
-    </div>;
+    <div>
+      {time}
+    </div>
+    <div className="date">
+      {dateStr}
+    </div>
+  </div>;
 }
 
 export default Time;

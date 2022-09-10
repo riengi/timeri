@@ -7,7 +7,6 @@ const getDays = (year, month) => {
   return new Date(year, month, 0).getDate();
 };
 function getAge(bd) {
-  console.log(bd);
   const el = bd.split("-");
   const year = Number(el[0]);
   const month = Number(el[1]);
@@ -28,7 +27,6 @@ function getAge(bd) {
 }
 
 function getDaysToBirthday(bd) {
-  console.log(bd);
   const el = bd.split("-");
   const year = Number(el[0]);
   const month = Number(el[1]);
@@ -84,8 +82,6 @@ function App() {
     async function fetchMyAPI() {
       const received = await invoke("birthdays");
 
-      console.log(received);
-
       if (received.status === "Ok") {
         received.data.map((person, index) => {
           person.toBirthday = getDaysToBirthday(person.birthday);
@@ -111,7 +107,7 @@ function App() {
 
   return (
     <div className="birthdays">
-      Birthdays
+      🎂 Birthday
       {data === undefined ? <div>Loading...</div> : <div>{data}</div>}
     </div>
   );

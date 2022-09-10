@@ -1,14 +1,15 @@
 .time {
-    display: block;
-    background-color: black;
-    color: greenyellow;
+    background-color: black !important;
+    color: greenyellow; 
     border-radius: 25px;
 
-    font-size: 40px;
+    font-size: 5vw;
     text-align: center;
-    margin: 10px;
-    padding: 40px
+    padding: 5vw !important;
+}
 
-
-
+.date {
+    font-size:12px;
+    color: white;
+    padding: 1vw;
 }

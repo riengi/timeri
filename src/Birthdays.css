@@ -1,8 +1,5 @@
 .birthdays {
-    background-color: greenyellow;
-    padding: 40px;
-    margin: 10px;
+    background-color: greenyellow !important;
     color: black;    
     border-radius: 25px;
-    min-width: 400px;
 }

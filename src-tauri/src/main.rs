@@ -10,6 +10,7 @@ fn greet(name: &str) -> String {
 }
 
 mod birthday;
+use local_ip_address::local_ip;
 
 #[tauri::command]
 fn birthdays() -> birthday::Response {
@@ -19,9 +20,17 @@ fn birthdays() -> birthday::Response {
     return res;
 }
 
+#[tauri::command] 
+fn ip() -> String {
+    println!("ip");
+    let ip = local_ip().unwrap();
+    return ip.to_string();
+
+}
+
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet, birthdays])
+        .invoke_handler(tauri::generate_handler![greet, birthdays, ip])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
