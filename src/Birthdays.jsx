@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 import { useEffect } from "react";
+import './Birthdays.css';
 
 const getDays = (year, month) => {
   return new Date(year, month, 0).getDate();
@@ -109,7 +110,7 @@ function App() {
   }, []);
 
   return (
-    <div style={style}>
+    <div className="birthdays">
       Birthdays
       {data === undefined ? <div>Loading...</div> : <div>{data}</div>}
     </div>

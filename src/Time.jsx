@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
+import './Time.css';
 
 function getTime() {
   return new Date().toLocaleTimeString();
 }
 
 function Time() {
+
   const [time, setTime] = useState(getTime());
 
   useEffect(() => {
@@ -16,7 +18,9 @@ function Time() {
     return () => clearInterval(interval);
   });
 
-  return <div>{time}</div>;
+  return <div className="time">
+    {time}
+    </div>;
 }
 
 export default Time;

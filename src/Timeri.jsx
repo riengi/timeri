@@ -8,11 +8,16 @@ import { useEffect } from "react";
 
 function App() {
   return (
-    <div className="container">
-      <h1> Timeri</h1>
+    <div className="flx-container">
 
-      <Time />
+      <div className="flex-item-1">
+        <Time />
+        </div>
+
+        <div className="flex-item-2">
       <Birthdays />
+      </div>
+
     </div>
   );
 }

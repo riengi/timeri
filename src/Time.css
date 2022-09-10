@@ -1,0 +1,14 @@
+.time {
+    display: block;
+    background-color: black;
+    color: greenyellow;
+    border-radius: 25px;
+
+    font-size: 40px;
+    text-align: center;
+    margin: 10px;
+    padding: 40px
+
+
+
+}
