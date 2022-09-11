@@ -71,7 +71,7 @@ function getToBirthdayString(n) {
   return months + "m " + days + "d";
 }
 
-function App() {
+function Birthdays() {
   const [data, setData] = useState(undefined);
 
   const style = {
@@ -113,4 +113,4 @@ function App() {
   );
 }
 
-export default App;
+export default Birthdays;

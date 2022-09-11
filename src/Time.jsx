@@ -21,7 +21,7 @@ function Time() {
   // Get date
   var days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
   const date = new Date();
-  const dateStr = date.toISOString().split('T')[0] + " (" + days[date.getDay()].toLowerCase() + ") " + "UTC+" + (-date.getTimezoneOffset() / 60);
+  const dateStr = date.toISOString().split('T')[0] + " (" + days[date.getDay()].toUpperCase() + ") " + "UTC+" + (-date.getTimezoneOffset() / 60);
 
   return <div className="time">
     <div>

@@ -26,8 +26,8 @@ export default function SystemInfo() {
 
     return (
         <div className="system-info">
-            <div>🌐 IP: {local_ip}</div>
-            <div>🏠 IP: {public_ip}</div>
+            <div>🌐 IP: {public_ip}</div>
+            <div>🏠 IP: {local_ip}</div>
         </div>
     )
 

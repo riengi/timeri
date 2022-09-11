@@ -1,0 +1,30 @@
+.activities {
+    background-color: lightgray !important;
+    color: black;    
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.activity {
+    background-color: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 15px;
+    min-width: 100px;
+    text-align: center;
+    transition: 0.4s;
+    border: 2px solid white;
+}
+
+.activity-active {
+    background-color: #4CAF50;
+}
+
+.activity:hover {
+  border: 2px solid #4CAF50;
+}
+
+.stopwatch {
+    color: black;
+}
