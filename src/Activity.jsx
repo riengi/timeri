@@ -17,7 +17,7 @@ function Activities(props) {
       <div>
         
       </div>
-        <Stopwatch id={props.id} active={props.active} hour="0" min="0" sec="0" />
+        <Stopwatch id={props.id} active={props.active} hour="0" min="0" sec={props.sec} />
 
       </div>
   );

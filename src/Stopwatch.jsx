@@ -20,13 +20,14 @@ function secToTime(s) {
 
 function Stopwatch(props) {
 
-  const [sec, setSec] = useState(0)
+  const [sec, setSec] = useState(props.sec)
 
     useEffect(() => {
 
   if (props.active !== props.id)  return;
       const interval = setInterval(() => {
         setSec(sec+1);
+        secAdded++;
 
       }, 1000)
 

@@ -74,9 +74,6 @@ function getToBirthdayString(n) {
 function Birthdays() {
   const [data, setData] = useState(undefined);
 
-  const style = {
-    textAlign: "left",
-  };
 
   useEffect(() => {
     async function fetchMyAPI() {
@@ -93,7 +90,7 @@ function Birthdays() {
         const c = received.data.map((person, index) => {
           person.toBirthday = getDaysToBirthday(person.birthday);
           return (
-            <div style={style} key={index}>
+            <div className="birthday-item" key={index}>
               {getToBirthdayString(person.toBirthday)} - {person.name}(
               {person.tbAge})
             </div>
@@ -109,8 +106,7 @@ function Birthdays() {
     <div className="birthdays">
       🎂 Birthday
       {data === undefined ? <div>Loading...</div> : <div>{data}</div>}
-    </div>
-  );
+    </div>);
 }
 
 export default Birthdays;

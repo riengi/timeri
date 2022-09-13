@@ -11,6 +11,8 @@ fn greet(name: &str) -> String {
 
 mod birthday;
 mod activities;
+use std::collections::HashMap;
+
 use local_ip_address::local_ip;
 
 #[tauri::command]
@@ -35,9 +37,18 @@ fn activities() -> activities::Response {
     activities::get_activities()
 } 
 
+#[tauri::command]
+fn read_today_activities() -> HashMap<String,u32> {
+    activities::read_today_log()
+}
+
 fn main() {
+
+    // read today activity log
+
+
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet, birthdays, ip,activities])
+        .invoke_handler(tauri::generate_handler![greet, birthdays, ip,activities, read_today_activities])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

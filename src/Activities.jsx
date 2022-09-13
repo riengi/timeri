@@ -5,6 +5,8 @@ import './Activities.css';
 import Activity from './Activity'
 
 function Activities() {
+
+
   const [data, setData] = useState([]);
   const [active, setActive] = useState(0);
 
@@ -13,8 +15,24 @@ function Activities() {
     async function fetchMyAPI() {
       const received = await invoke("activities");
       const data = received.Ok;
-      setData(data);
 
+      console.log(data);
+
+      const today = await invoke('read_today_activities')
+      console.log(today);
+
+
+      data.forEach(element => {
+        const sec = today[element.id]
+        if (sec === undefined)
+          element.sec = 0;
+        else 
+          element.sec = today[element.id]
+      });
+
+      console.log(data)
+
+      setData(data);
       }
     
     fetchMyAPI();
@@ -36,6 +54,7 @@ function Activities() {
         name={d.name}
         productive={d.productive} 
         active={active}
+        sec={d.sec}
         />
         </div>
 
